@@ -14,6 +14,7 @@ const tr = new st.Transform({
     const [id, time, text] = chunk.toString().split("\n");
     if (id === "" || time === "" || text === "") return;
     const [start, end] = time.split(" --> ").map((t: string) => {
+      // TODO: comma
       const [h, m, s] = t.split(":").map((t) => parseFloat(t));
       return h * 3600 + m * 60 + s;
     });
